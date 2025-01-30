@@ -4,7 +4,11 @@ The “Green Bites” web application helps users discover, and share healthy re
 
 
 Flow chart:
+
+
 ![image](https://github.com/user-attachments/assets/1501d0c0-9c84-4f9a-bebe-2d3da43eb50b)
+
+
 
 
 Setup:
