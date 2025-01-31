@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 const saladSchema = new mongoose.Schema({
     name: {
@@ -6,15 +6,17 @@ const saladSchema = new mongoose.Schema({
         required: true
     },
     ingredients: {
-        type: String,
+        type: [String], // Array of strings
         required: true
     },
     recipe: {
-        type: String,
+        type: [String], // Array of strings
         required: true
     },
     image: {
         type: String,
         required: true
     }
-})
+});
+
+module.exports = mongoose.model('Salad', saladSchema);

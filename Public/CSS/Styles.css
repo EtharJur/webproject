@@ -170,9 +170,12 @@ hr {
 }
 
 .recipe {
-    background-color: #c6d7b3;
-    color: #3d7268;
+    background-color: rgba(226, 156, 123, 0.393);
+    border-color: #d57157;
+    border-style: line;
     border-radius: 25px;
+    color: #3d7268;
+    border-width: 10px;
     border-color: #3d7268;
     display: flex;
     padding-left: 35px;
@@ -181,6 +184,7 @@ hr {
     margin-right: 30px;
     margin-bottom: 20px;
     box-sizing: border-box;
+    flex-direction: column;
 }
 
 .recipe img {
