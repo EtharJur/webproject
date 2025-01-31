@@ -1,61 +1,73 @@
-const express = require("express")
-const app = express()
-const db = require('./config/database')
-const bodyParser = require('body-parser')
-const session = require('express-session')
-const flash = require('connect-flash')
-const passport = require('passport')
-const passportSetup = require('./config/passport-setup')
-const port = 4000
+const express = require('express');
+const path = require('path');
+const bodyParser = require('body-parser');
+const session = require('express-session');
+const flash = require('connect-flash');
+const passport = require('passport');
+const connectDB = require('./config/db'); // Import database connection
+const mainRouter = require('./routers/mainrouter'); // Ensure the file exists
 
-// bring ejs template
-// instaall nodemone for automatic reflect changes in web; if nodemone not working try to use command Set-ExecutionPolicy RemoteSigned -Scope CurrentUser in terminal
-app.set('view engine', 'ejs')
-// bring body parser 
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
+const app = express();
+const port = 3000;
 
-//bring static
+// Connect to Database
+connectDB();
 
-app.use(express.static('public'))
-app.use(express.static('uploads'))
-app.use(express.static('node_modules'))
-// session and flash config .
+// Set EJS as the view engine
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views')); // Ensure "views" folder exists
+
+// Middleware to serve static files (CSS, Images, etc.)
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname)));
+
+// Body parser middleware
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+// Session and Flash Messages
 app.use(session({
-    secret: 'lorem ipsum',
+    secret: 'rising star',
     resave: false,
     saveUninitialized: false,
-    cookie: {maxAge: 60000 * 15}
-}))
-app.use(flash())
-// bring passport 
-app.use(passport.initialize())
-app.use(passport.session())
-//store user object 
+}));
+app.use(flash());
 
-app.get('*', (req,res,next)=> {
-    res.locals.user = req.user || null
-    next()
-})
+// Initialize Passport
+app.use(passport.initialize());
+app.use(passport.session());
 
-app.get('/', (req,res)=> {
+// Store user object globally
+app.use((req, res, next) => {
+    res.locals.user = req.user || null;
+    next();
+});
 
-   res.redirect('/events')
-    
-})
+// Daily messages
+const dailyTexts = [
+    "Start your day with a fresh salad!",
+    "Green juice for a fresh start!",
+    "Healthy eating, happy living.",
+    "Nature’s best on your plate.",
+    "Stay fit, stay fresh!",
+    "A healthy outside starts from inside.",
+    "Fresh flavors, daily inspiration."
+];
 
-// bring events routes
+// Middleware to provide dailyText to all templates
+app.use((req, res, next) => {
+    res.locals.dailyText = dailyTexts[new Date().getDay()]; // Get text based on the current day
+    next();
+});
 
-const events = require('./routes/event-routes')
-app.use('/events', events)
+// Routes
+app.get('/', (req, res) => {
+    res.redirect('/mainpage');
+});
 
-// bring user routes
-const users = require('./routes/user-routes')
-app.use('/users', users)
+app.use('/mainpage', mainRouter); // Add this line to handle /mainpage route
 
-
-// listen to port 3000
-
+// Start the server
 app.listen(port, () => {
-    console.log(`app listening on port ${port}`);
+    console.log(`Server running at http://localhost:${port}`);
 });

@@ -121,3 +121,17 @@ footer {
 footer a {
     color: whitesmoke;
 }
+
+.daily{
+    background-color: #c6d7b3;
+    color: #3d7268;
+    border-radius: 25px;
+    border-color: #3d7268;
+    display: block;
+    padding-left: 35px;
+    padding-right: 35px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
