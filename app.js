@@ -5,7 +5,9 @@ const session = require('express-session');
 const flash = require('connect-flash');
 const passport = require('passport');
 const connectDB = require('./config/db'); // Import database connection
+require('./config/passport'); // Import passport configuration
 const mainRouter = require('./routers/mainrouter'); // Ensure the file exists
+const userRouter = require('./routers/userrouter'); // Import user routes
 
 const app = express();
 const port = 3000;
@@ -43,6 +45,13 @@ app.use((req, res, next) => {
     next();
 });
 
+
+// Middleware to set flash messages
+app.use((req, res, next) => {
+    res.locals.messages = req.flash();
+    next();
+});
+
 // Daily messages
 const dailyTexts = [
     "our body is a reflection of what you feed it—nourish it with fresh, wholesome foods, and it will reward you with energy, strength, and longevity",
@@ -67,11 +76,15 @@ app.use((req, res, next) => {
 });
 
 // Routes
+// Protect main page from unauthenticated users
+app.get('/mainpage', (req, res) => {
+    if (!req.isAuthenticated()) {
+        return res.redirect('/login');
+    }
+    res.render('mainpage');
+});
 app.get('/', (req, res) => {
     res.redirect('/mainpage');
-});
-app.get('/mainpage', (req, res) => {
-    res.render('mainpage');
 });
 app.get('/salads', (req, res) => {
     res.render('salads'); // Ensure you have a salads.ejs file
@@ -85,8 +98,12 @@ app.get('/aboutus', (req, res) => {
 app.get('/signup', (req, res) => {
     res.render('signup'); // Ensure you have a signup.ejs file
 });
+app.get('/login', (req, res) => {
+    res.render('login'); // Ensure you have a login.ejs file
+});
 
 app.use('/mainpage', mainRouter); // Add this line to handle /mainpage route
+app.use('/auth', userRouter); // Use user routes
 
 // Start the server
 app.listen(port, () => {

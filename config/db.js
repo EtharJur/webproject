@@ -5,7 +5,10 @@ mongoose.set('strictQuery', false);
 
 const connectDB = async () => {
     try {
-        const conn = await mongoose.connect(process.env.MONGODB_URI);
+        const conn = await mongoose.connect(process.env.MONGODB_URI, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        });
         console.log(`Database Connected: ${conn.connection.host}`);
     } catch (error) {
         console.error(`Database Connection Error: ${error.message}`);

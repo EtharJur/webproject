@@ -1,38 +1,52 @@
 <%- include('./Layouts/header.ejs') -%>
-        <h1 class="head">Sign Up Page</h1>
-    </div>
 
-    <div id="main">
-        <form id="sign" action="#" method="POST">
-            <h2 class="head">Create Your Account</h2>
-            <div class="slot">
-                <label for="username" class="intext">Username:</label>
-                <input type="text" id="username" name="username" required>
-            </div>
+<div id="">
+    <h1 class="" style="color: #d57157">Sign Up Page</h1>
 
-            <div class="slot">
-                <label for="email" class="intext">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
+    <!-- Flash Messages for Errors & Success -->
+    <% if (messages.error && messages.error.length > 0) { %>
+        <div class="alert alert-danger">
+            <%= messages.error %>
+        </div>
+    <% } %>
 
-            <div class="slot">
-                <label for="password" class="intext">Password:</label>
-                <input type="password" id="password" name="password" required>
-            </div>
+    <% if (messages.success && messages.success.length > 0) { %>
+        <div class="alert alert-success">
+            <%= messages.success %>
+        </div>
+    <% } %>
 
-            <div class="slot">
-                <label for="confirm-password" class="intext">Confirm Password:</label>
-                <input type="password" id="confirm-password" name="confirm-password" required>
-            </div>
+    <form id="sign" action="/auth/signup" method="POST"> <!-- Ensuring form action is correct -->
+        <h2 class="">Create Your Account</h2>
 
-            <div class="slot">
-                <button type="submit">Sign Up</button>
-            </div>
+        <div class="">
+            <label for="name" class="intext">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
 
-            <div class="slot">
-                <p>Already have an account? <a href="login.html">Login here</a></p>
-            </div>
-        </form>
-    </div>
+        <div class="">
+            <label for="email" class="intext">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
 
-    <%- include('./Layouts/footer.ejs') -%>
+        <div class="">
+            <label for="password" class="intext">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+
+        <div class="">
+            <label for="confirm-password" class="intext">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirm_password" required>
+        </div>
+
+        <div class="">
+            <button type="submit">Sign Up</button>
+        </div>
+
+        <div class="">
+            <p>Already have an account? <a href="/login">Login here</a></p>
+        </div>
+    </form>
+</div>
+
+<%- include('./Layouts/footer.ejs') -%>

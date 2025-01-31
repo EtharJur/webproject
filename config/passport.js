@@ -1,79 +1,33 @@
-const passport = require('passport')
-const localStrategy = require('passport-local').Strategy
-const User = require('../models/user')
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
+const User = require('../models/user');
 
-// saving user object in the session
-
-passport.serializeUser(function(user, done) {
-    done(null, user.id);
-  });
-  
-  passport.deserializeUser(function(id, done) {
-    User.findById(id, function(err, user) {
-      done(err, user);
-    });
-  });
-// register user
-passport.use('local.signup', new localStrategy({
-    usernameField : 'email',
-    passwordField: 'password',
-    passReqToCallback: true
-}, (req,username,password, done)=> {
-    if (req.body.password != req.body.confirm_password) {
-        return done(null, false, req.flash('error', 'Passwords do not match'))
-    } else {
-        User.findOne({email: username}, (err,user)=> {
-            if(err) {
-                return done(err)
-            }
-            if(user) {
-                return done(null, false, req.flash('error', 'Email already used'))
-            }
-
-            if (!user) {
-                //create user
-                let newUser = new User()
-                newUser.email = req.body.email
-                newUser.password = newUser.hashPassword(req.body.password),
-                newUser.avatar = "profile.png"
-                newUser.save ((err,user)=> {
-                    if(!err) {
-                        return done(null, user, req.flash('success', 'User Added'))
-                    } else {
-                        console.log(err)
-                    }
-                })
-            }
-        })
+passport.use(new LocalStrategy({ usernameField: 'email' }, async (email, password, done) => {
+    try {
+        const user = await User.findOne({ email });
+        if (!user) {
+            return done(null, false, { message: 'No user found with this email' });
+        }
+        if (!user.comparePasswords(password, user.password)) {
+            return done(null, false, { message: 'Incorrect password' });
+        }
+        return done(null, user);
+    } catch (err) {
+        return done(err);
     }
-}))
+}));
 
-//login strategy
+passport.serializeUser((user, done) => {
+    done(null, user.id);
+});
 
-passport.use('local.login', new localStrategy({
-    usernameField : 'email',
-    passwordField: 'password',
-    passReqToCallback: true
-}, (req,username,password, done)=> {
+passport.deserializeUser(async (id, done) => {
+    try {
+        const user = await User.findById(id);
+        done(null, user);
+    } catch (err) {
+        done(err);
+    }
+});
 
-    //find user
-    User.findOne({email: username}, (err,user)=> {
-
-        if (err) {
-            return done(null, false, req.flash('error', 'Something wrong happened'))
-        } 
-        if(!user) {
-            return done(null, false, req.flash('error', 'user was not found'))
-        }
-        if (user) {
-            if (user.comparePasswords(password, user.password)) {
-
-                return done(null,user, req.flash('success', ' welcome back'))
-
-            } else {
-                return done(null,false, req.flash('error', ' password is wrong'))
-
-            }
-        }
-    })
-}))
+module.exports = passport;
