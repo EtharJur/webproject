@@ -1,0 +1,239 @@
+html,
+body {
+    overflow-x: hidden;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+body {
+    background-image: url(/images/vege.png);
+    background-position: left top;
+    background-repeat: repeat;
+    background-color: #f6faf2;
+    font-family: 'font';
+    align-self: auto;
+    color: #e29c7b;
+}
+
+
+@font-face {
+    font-family: 'font';
+    src: url(fonts/font.ttf);
+}
+
+.main-content {
+    flex: 1;
+}
+
+#header {
+    background-color: #c6d7b3;
+    color: #3d7268;
+    float: left;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 35%;
+
+}
+
+#navbar {
+    align-self: auto;
+    display: flex;
+    align-items: center;
+}
+
+hr {
+    visibility: hidden;
+}
+
+#main a {
+    color: #f5f5f5;
+    text-decoration: none;
+    margin-right: 30px;
+    padding: 10px;
+    background-color: #d57157;
+    border-radius: 10px;
+
+}
+
+#main {
+    background-color: #c6d7b3;
+    display: flex;
+    box-shadow: 1px 1px #3d7268;
+    margin-bottom: 60px;
+    padding: 0%;
+
+}
+
+#serch {
+    margin: 30px;
+    display: flex;
+    border: 10px;
+    border-color: #3d7268;
+}
+
+.slot {
+    background-color: #c6d7b3;
+    color: #3d7268;
+    border-radius: 25px;
+    border-color: #3d7268;
+    display: flex;
+    padding-left: 35px;
+    padding-right: 35px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.intext {
+    display: block;
+    margin-left: 20px;
+}
+
+.head {
+    color: #d57157;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.slot img {
+    width: 200px;
+    height: 200px;
+    float: left;
+    margin: 20px;
+
+}
+
+
+#sign {
+
+    box-sizing: border-box;
+    border-radius: 15px;
+    margin-left: 60px;
+}
+
+#main a:hover {
+    background-color: #e29c7b;
+    transform: scale(1.2, 1.2);
+}
+
+.slot:hover {
+    background-color: #e29c7b;
+    transform: scale(1.02, 1.02);
+}
+
+::selection {
+    background-color: #c6d7b3;
+}
+
+.foter {
+    background-color: #679882;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 20px;
+    width: 100%;
+    height: 100px;
+    font-style: normal;
+    color: #3d7268;
+}
+
+.foter a {
+    color: #c6d7b3;
+}
+
+.foter a:hover {
+    color: #e29c7b;
+}
+
+.recipe {
+    background-color: #c6d7b3;
+    color: #3d7268;
+    border-radius: 25px;
+    border-color: #3d7268;
+    display: flex;
+    padding-left: 35px;
+    padding-right: 35px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.recipe img {
+    width: 200px;
+    height: 200px;
+    float: left;
+    margin: 20px;
+
+}
+
+.daily {
+
+    color: #3d7268;
+    border-radius: 25px;
+    border-color: #3d7268;
+    display: block;
+    padding-left: 35px;
+    padding-right: 35px;
+    box-sizing: border-box;
+    align-items: center;
+  
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.container {
+    background-color: rgba(198, 215, 179, 0.8);
+    color: #3d7268;
+    border-radius: 25px;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    align-items: center; 
+    font-size: 20px;
+    padding: 20px;
+    margin: 50px ; 
+    max-width: 100%; 
+    box-sizing: border-box; 
+    overflow: hidden; 
+}
+
+.txt {
+    color: #d57157;
+    font-size: 50px;
+    font-weight: bold;
+    border-radius: 20px;
+    padding: 50px ;
+    position: relative;
+    display: block;
+    max-width: 100%;
+    width: 1100px;
+}
+
+.txt::before,
+.txt::after {
+    content: "";
+    position: absolute;
+    height: 150px;
+    width: 150px;
+    background-image: url('/images/sparkles-svgrepo-com.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.txt::before {
+    left: -90px;
+    top: 30px;
+}
+
+.txt::after {
+    right: -90px;
+    bottom: 30px;
+    transform: scale(-1);
+}
