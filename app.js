@@ -64,6 +64,21 @@ app.use((req, res, next) => {
 app.get('/', (req, res) => {
     res.redirect('/mainpage');
 });
+app.get('/mainpage', (req, res) => {
+    res.render('mainpage');
+});
+app.get('/salads', (req, res) => {
+    res.render('salads'); // Ensure you have a salads.ejs file
+});
+app.get('/juices', (req, res) => {
+    res.render('juices'); // Ensure you have a juices.ejs file
+});
+app.get('/aboutus', (req, res) => {
+    res.render('aboutus'); // Ensure you have an aboutus.ejs file
+});
+app.get('/signup', (req, res) => {
+    res.render('signup'); // Ensure you have a signup.ejs file
+});
 
 app.use('/mainpage', mainRouter); // Add this line to handle /mainpage route
 
