@@ -49,7 +49,7 @@ body {
 hr {
     visibility: hidden;
 }
-h1{
+.log {
     color: #3d7268;
     text-align: center;
     margin-top: 50px;
