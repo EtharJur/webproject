@@ -79,12 +79,21 @@ app.get('/', (req, res) => {
 
 
 app.get('/salads', async (req, res) => {
+    let perPage = 1; // Number of salads per page
+    let page = req.query.page || 1; // Get the page number from query params, default is 1
+
     try {
-        const salads = await Salad.find();
-        if (!salads || salads.length === 0) {
-            return res.status(404).send("No salads found.");
-        }
-        res.render("salads", { salads });
+        const totalSalads = await Salad.countDocuments();
+        const salads = await Salad.find()
+            .skip((perPage * page) - perPage)
+            .limit(perPage);
+
+        res.render("salads", {
+            salads,
+            current: page,
+            pages: Math.ceil(totalSalads / perPage)
+        });
+
     } catch (error) {
         console.error("Error fetching salads:", error.message);
         res.status(500).send("Internal Server Error: " + error.message);
@@ -93,12 +102,21 @@ app.get('/salads', async (req, res) => {
 
 
 app.get('/juices', async (req, res) => {
+    let perPage = 1; // Number of juices per page
+    let page = req.query.page || 1; 
+
     try {
-        const juices = await Juice.find();
-        if (!juices || juices.length === 0) {
-            return res.status(404).send("No juices found.");
-        }
-        res.render("juices", { juices });
+        const totalJuices = await Juice.countDocuments();
+        const juices = await Juice.find()
+            .skip((perPage * page) - perPage)
+            .limit(perPage);
+
+        res.render("juices", {
+            juices,
+            current: page,
+            pages: Math.ceil(totalJuices / perPage)
+        });
+
     } catch (error) {
         console.error("Error fetching juices:", error.message);
         res.status(500).send("Internal Server Error: " + error.message);

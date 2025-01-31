@@ -24,4 +24,20 @@
     <% }); %>
 </section>
 
+<div class="pagination">
+    <% if (current > 1) { %>
+        <a href="/juices?page=<%= current - 1 %>" class="prev">Previous</a>
+    <% } %>
+
+    <% for (let i = 1; i <= pages; i++) { %>
+        <a href="/juices?page=<%= i %>" class="<%= (i == current) ? 'active' : '' %>">
+            <%= i %>
+        </a>
+    <% } %>
+
+    <% if (current < pages) { %>
+        <a href="/juices?page=<%= current + 1 %>" class="next">Next</a>
+    <% } %>
+</div>
+
 <%- include('./Layouts/footer.ejs') -%>
