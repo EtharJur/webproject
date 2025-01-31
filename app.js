@@ -45,13 +45,19 @@ app.use((req, res, next) => {
 
 // Daily messages
 const dailyTexts = [
-    "Start your day with a fresh salad!",
-    "Green juice for a fresh start!",
-    "Healthy eating, happy living.",
-    "Nature’s best on your plate.",
-    "Stay fit, stay fresh!",
-    "A healthy outside starts from inside.",
-    "Fresh flavors, daily inspiration."
+    "our body is a reflection of what you feed it—nourish it with fresh, wholesome foods, and it will reward you with energy, strength, and longevity",
+
+    "Every healthy meal is a step toward a stronger body and a sharper mind. The little choices you make today shape the future version of you.",
+
+    "Your body is a high-performance machine—give it real, nutritious foods, and it will run with power, clarity, and unstoppable energy.",
+
+    "What you eat isn’t just fuel; it’s self-care. Choosing nourishing foods means choosing vitality, mental clarity, and a body that supports your dreams.",
+
+    "Every fresh fruit, leafy green, and whole grain you eat is an investment in your future. The healthier you eat today, the stronger you’ll be tomorrow.",
+
+    "The right foods heal, energize, and protect you from illness. Eat naturally, eat wisely, and let your meals work in your favor every single day.",
+
+    "Eating healthy isn’t about perfection—it’s about balance. Nourish your body, enjoy your food, and let mindful choices lead you to lifelong wellness."
 ];
 
 // Middleware to provide dailyText to all templates
