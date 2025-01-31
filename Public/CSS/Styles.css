@@ -117,7 +117,8 @@ hr {
     margin-left: 60px;
 }
 
-#main a:hover {
+
+#main a:hover{
     background-color: #e29c7b;
     transform: scale(1.2, 1.2);
 }
@@ -236,4 +237,13 @@ hr {
     right: -90px;
     bottom: 30px;
     transform: scale(-1);
+}
+
+#header a{
+    background-color: #c6d7b3;
+}
+
+#header a:hover{
+    background-color: #c6d7b3;
+    transform: none;
 }
