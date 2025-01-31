@@ -39,7 +39,18 @@ body {
     width: 35%;
 
 }
-
+#link{
+    color: #d57157;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 30px;
+    padding: 10px;
+}
+#link:hover{
+   color:  #e29c7b;
+   
+}
 #navbar {
     align-self: auto;
     display: flex;
