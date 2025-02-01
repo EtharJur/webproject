@@ -38,6 +38,26 @@ Future work:
 
 
 Screenshots:
+login page:
+
+
+![image](https://github.com/user-attachments/assets/ae14eb5d-f1d7-45d1-a1da-b603dcbe067b)
+
+
+signup page:
+
+
+ ![image](https://github.com/user-attachments/assets/94b4c0db-972f-4b9b-967e-2f8d58a9f248)
+
+
+ main page:
+
+ ![image](https://github.com/user-attachments/assets/04af4977-7fdd-473d-b6d9-a604a79ad631)
+
+ 
+
+
+
 
 Refrences:
 
