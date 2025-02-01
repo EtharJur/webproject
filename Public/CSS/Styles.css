@@ -22,7 +22,7 @@ body {
 
 @font-face {
     font-family: 'font';
-    src: url(fonts/font.ttf);
+    src: url(/fonts/font.ttf);
 }
 
 .main-content {
@@ -349,8 +349,15 @@ hr {
     margin: 10px;
     margin-left: 10px;
     margin-right: 50px;
+    padding: 8px 15px;
+    background-color: #d57157;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .btn:hover {
     background-color: #e29c7b;
+    transform: scale(1.2, 1.2);
 }
