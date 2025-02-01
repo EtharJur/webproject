@@ -39,7 +39,8 @@ body {
     width: 35%;
 
 }
-#link{
+
+#link {
     color: #d57157;
     text-decoration: none;
     font-size: 20px;
@@ -47,10 +48,12 @@ body {
     margin-right: 30px;
     padding: 10px;
 }
-#link:hover{
-   color:  #e29c7b;
-   
+
+#link:hover {
+    color: #e29c7b;
+
 }
+
 #navbar {
     align-self: auto;
     display: flex;
@@ -60,12 +63,14 @@ body {
 hr {
     visibility: hidden;
 }
+
 .log {
     color: #3d7268;
     text-align: center;
     margin-top: 50px;
     margin-bottom: 50px;
 }
+
 #main a {
     color: #f5f5f5;
     text-decoration: none;
@@ -138,7 +143,7 @@ hr {
 }
 
 
-#main a:hover{
+#main a:hover {
     background-color: #e29c7b;
     transform: scale(1.2, 1.2);
 }
@@ -208,7 +213,7 @@ hr {
     padding-right: 35px;
     box-sizing: border-box;
     align-items: center;
-  
+
     margin-top: 30px;
     margin-bottom: 30px;
 }
@@ -218,15 +223,15 @@ hr {
     color: #3d7268;
     border-radius: 25px;
     display: flex;
-    flex-wrap: wrap; 
-    justify-content: center; 
-    align-items: center; 
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     font-size: 20px;
     padding: 20px;
-    margin: 50px ; 
-    max-width: 100%; 
-    box-sizing: border-box; 
-    overflow: hidden; 
+    margin: 50px;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .txt {
@@ -234,7 +239,7 @@ hr {
     font-size: 50px;
     font-weight: bold;
     border-radius: 20px;
-    padding: 50px ;
+    padding: 50px;
     position: relative;
     display: block;
     max-width: 100%;
@@ -263,11 +268,11 @@ hr {
     transform: scale(-1);
 }
 
-#header a{
+#header a {
     background-color: #c6d7b3;
 }
 
-#header a:hover{
+#header a:hover {
     background-color: #c6d7b3;
     transform: none;
 }
@@ -277,10 +282,12 @@ hr {
     margin-bottom: 15px;
     border-radius: 5px;
 }
+
 .alert-danger {
     background-color: #f8d7da;
     color: #721c24;
 }
+
 .alert-success {
     background-color: #d4edda;
     color: #155724;
@@ -315,7 +322,7 @@ hr {
     font-weight: bold;
 }
 
-.btn{
+.btn {
     background-color: #d57157;
     color: #f5f5f5;
     border: none;
@@ -327,6 +334,6 @@ hr {
     margin-right: 50px;
 }
 
-.btn:hover{
+.btn:hover {
     background-color: #e29c7b;
 }

@@ -4,12 +4,12 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const flash = require('connect-flash');
 const passport = require('passport');
-const connectDB = require('./config/db'); 
+const connectDB = require('./config/db');
 require('./config/passport');
 const mainRouter = require('./routers/mainrouter');
-const userRouter = require('./routers/userrouter'); 
-const Salad = require('./models/salads'); 
-const Juice = require('./models/juices'); 
+const userRouter = require('./routers/userrouter');
+const Salad = require('./models/salads');
+const Juice = require('./models/juices');
 const searchRouter = require('./routers/searchrouter');
 const app = express();
 const port = 3333;
@@ -43,7 +43,7 @@ app.use(passport.session());
 
 app.use((req, res, next) => {
     res.locals.user = req.user || null;
-    res.locals.messages = req.flash(); 
+    res.locals.messages = req.flash();
     next();
 });
 
@@ -103,7 +103,7 @@ app.get('/salads', async (req, res) => {
 
 app.get('/juices', async (req, res) => {
     let perPage = 1; // Number of juices per page
-    let page = req.query.page || 1; 
+    let page = req.query.page || 1;
 
     try {
         const totalJuices = await Juice.countDocuments();
