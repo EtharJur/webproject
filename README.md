@@ -110,5 +110,8 @@ log out:
 
 
 
-Refrences:
+resources:
+1- https://github.com/RaddyTheBrand/Notes-NodeJs-CRUD-MongoDB
+2- https://mongodb.github.io/node-mongodb-native/3.6/tutorials/connect/
+3- https://github.com/gyrocode/jquery-datatables-alphabetSearch
 
