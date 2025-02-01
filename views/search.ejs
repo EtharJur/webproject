@@ -1,27 +1,55 @@
 <%- include('./Layouts/header.ejs') -%>
 
-<h1>Search Results</h1>
+    <div class="log">
+        <h1>Search Results</h1>
 
-<% if (salads.length === 0 && juices.length === 0) { %>
-    <p>No results found for your search.</p>
-<% } else { %>
-    <h2>Salads</h2>
-    <% salads.forEach(salad => { %>
-        <div class="recipe-card" style="background-color:rgba(226, 156, 123, 0.863); padding: 30px; border-radius:15px; margin:10px;">
-            <img src="<%= salad.image %>" alt="<%= salad.name %>" style="width: 300px; height: 300px;">
-            <h3><%= salad.name %></h3>
-            <p>Ingredients: <%= salad.ingredients.join(', ') %></p>
-        </div>
+        <% if (salads.length===0 && juices.length===0) { %>
+            <p>No results found for your search.</p>
+            <% } else { %>
+                <h2>Salads</h2>
+                <% salads.forEach(salad=> { %>
+                    <div class="query">
+                        <div>
+                            <img src="<%= salad.image %>" alt="<%= salad.name %>" style="width: 300px; height: 300px;">
+                        </div>
+                        <div>
+                            <h3>
+                                <%= salad.name %>
+                            </h3>
+                            <ul>
+                                <% salad.ingredients.forEach(function(ingredient) { %>
+                                    <li>
+                                        <%= ingredient %>
+                                    </li>
+                                    <% }); %>
+                            </ul>
+                        </div>
+                    </div>
+                    <% }); %>
+
+                        <h2>Juices</h2>
+                        <% juices.forEach(juice=> { %>
+                            <div class="query">
+                                <div>
+                                    <img src="<%= juice.image %>" alt="<%= juice.name %>"
+                                        style="width: 300px; height: 300px;">
+
+                                </div>
+                                <div>
+                                    <h3>
+                                        <%= juice.name %>
+                                    </h3>
+                                    <ul>
+                                        <% juice.ingredients.forEach(function(ingredient) { %>
+                                            <li>
+                                                <%= ingredient %>
+                                            </li>
+                                            <% }); %>
+                                    </ul>
+                                </div>
+                            </div>
+    </div>
     <% }); %>
+        <% } %>
 
-    <h2>Juices</h2>
-    <% juices.forEach(juice => { %>
-        <div class="recipe-card" style="background-color:rgba(226, 156, 123, 0.863);padding: 30px; border-radius:15px; margin:10px;">
-            <img src="<%= juice.image %>" alt="<%= juice.name %>" style="width: 300px; height: 300px;">
-            <h3><%= juice.name %></h3>
-            <p>Ingredients: <%= juice.ingredients.join(', ') %></p>
-        </div>
-    <% }); %>
-<% } %>
-
-<%- include('./Layouts/footer.ejs') -%>
+            <%- include('./Layouts/footer.ejs') -%>

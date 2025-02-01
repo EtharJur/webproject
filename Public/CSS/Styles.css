@@ -195,6 +195,23 @@ hr {
     padding: 30px;
 }
 
+.query {
+    background-color: rgba(226, 156, 123, 0.863);
+    border-color: #d57157;
+    border-style: line;
+    border-radius: 25px;
+    border-color: #3d7268;
+    display: flex;
+    padding-left: 35px;
+    padding-right: 35px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    width: 1300px;
+    padding: 30px;
+}
+
 .recipe img {
     width: 200px;
     height: 200px;
