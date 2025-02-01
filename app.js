@@ -10,7 +10,7 @@ const mainRouter = require('./routers/mainrouter');
 const userRouter = require('./routers/userrouter'); 
 const Salad = require('./models/salads'); 
 const Juice = require('./models/juices'); 
-
+const searchRouter = require('./routers/searchrouter');
 const app = express();
 const port = 3333;
 
@@ -132,6 +132,7 @@ app.get('/login', (req, res) => res.render('login'));
 app.use('/mainpage', mainRouter);
 app.use('/auth', userRouter);
 
+app.use('/search', searchRouter); // Use the search route
 
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);

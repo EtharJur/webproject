@@ -1,19 +1,19 @@
 const mongoose = require('mongoose');
-require('dotenv').config(); // Ensure dotenv is loaded for MONGODB_URI
+require('dotenv').config();
 
 mongoose.set('strictQuery', false);
 
 const connectDB = async () => {
     try {
-        const conn = await mongoose.connect(process.env.MONGODB_URI, {
+        const conn = await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/greenbite', {
             useNewUrlParser: true,
             useUnifiedTopology: true,
         });
         console.log(`Database Connected: ${conn.connection.host}`);
     } catch (error) {
         console.error(`Database Connection Error: ${error.message}`);
-        process.exit(1); // Exit if database connection fails
+        process.exit(1);
     }
 };
 
-module.exports = connectDB; // Export the function
+module.exports = connectDB;
