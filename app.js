@@ -14,20 +14,15 @@ const searchRouter = require('./routers/searchrouter');
 const app = express();
 const port = 3333;
 
-
 connectDB();
-
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-
 app.use(express.static(path.join(__dirname, 'public')));
-
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
 
 app.use(session({
     secret: 'rising star',
@@ -36,17 +31,14 @@ app.use(session({
 }));
 app.use(flash());
 
-
 app.use(passport.initialize());
 app.use(passport.session());
-
 
 app.use((req, res, next) => {
     res.locals.user = req.user || null;
     res.locals.messages = req.flash();
     next();
 });
-
 
 const dailyTexts = [
     "Your body is a reflection of what you feed it—nourish it with fresh, wholesome foods, and it will reward you with energy, strength, and longevity.",
@@ -58,27 +50,30 @@ const dailyTexts = [
     "Eating healthy isn’t about perfection—it’s about balance. Nourish your body, enjoy your food, and let mindful choices lead you to lifelong wellness."
 ];
 
-
 app.use((req, res, next) => {
     res.locals.dailyText = dailyTexts[new Date().getDay()];
     next();
 });
 
-
-app.get('/mainpage', (req, res) => {
-    if (!req.isAuthenticated()) {
-        return res.redirect('/login');
+// Authentication middleware
+function ensureAuthenticated(req, res, next) {
+    if (req.isAuthenticated()) {
+        return next();
     }
-    res.render('mainpage');
-});
+    req.flash('error', 'Please log in to view that resource');
+    res.redirect('/login');
+}
 
-
+// Routes
 app.get('/', (req, res) => {
     res.redirect('/mainpage');
 });
 
+app.get('/mainpage', ensureAuthenticated, (req, res) => {
+    res.render('mainpage');
+});
 
-app.get('/salads', async (req, res) => {
+app.get('/salads', ensureAuthenticated, async (req, res) => {
     let perPage = 1; // Number of salads per page
     let page = req.query.page || 1; // Get the page number from query params, default is 1
 
@@ -100,8 +95,7 @@ app.get('/salads', async (req, res) => {
     }
 });
 
-
-app.get('/juices', async (req, res) => {
+app.get('/juices', ensureAuthenticated, async (req, res) => {
     let perPage = 1; // Number of juices per page
     let page = req.query.page || 1;
 
@@ -123,16 +117,13 @@ app.get('/juices', async (req, res) => {
     }
 });
 
-
-app.get('/aboutus', (req, res) => res.render('aboutus'));
+app.get('/aboutus', ensureAuthenticated, (req, res) => res.render('aboutus'));
 app.get('/signup', (req, res) => res.render('signup'));
 app.get('/login', (req, res) => res.render('login'));
 
-
 app.use('/mainpage', mainRouter);
 app.use('/auth', userRouter);
-
-app.use('/search', searchRouter); // Use the search route
+app.use('/search', ensureAuthenticated, searchRouter); // Use the search route
 
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
