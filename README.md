@@ -68,26 +68,33 @@ salads page:
 
 juices page:
 
-![image](https://github.com/user-attachments/assets/11cbdd35-a9c8-46ef-b040-723765fb2f53)
+![image](https://github.com/user-attachments/assets/491768f2-ff21-42a6-bec7-43b767f50535)
+
 
 about us:
 
-![image](https://github.com/user-attachments/assets/1849ad73-c538-4908-a2d9-bca55e506bc5)
+![image](https://github.com/user-attachments/assets/d6393535-eb92-4cda-818b-3f948b8f99c3)
 
-![image](https://github.com/user-attachments/assets/354b4b16-8e5a-4829-a19d-416fd6d07e7c)
+
+![image](https://github.com/user-attachments/assets/5a596170-07ab-4f2b-adaf-9da459c92218)
+
 
 
 some search results:
 
-![image](https://github.com/user-attachments/assets/0a6c9c9a-76cf-43c7-ad84-5db39dbceee5)
+![image](https://github.com/user-attachments/assets/143acac0-49a5-4475-b5e4-8be6a85f3c7e)
 
-![image](https://github.com/user-attachments/assets/5a48b49e-b3b3-4a3c-85eb-fac2ad558b50)
+
+![image](https://github.com/user-attachments/assets/e1c60475-ca2d-4cc7-8535-448bb7cdb9ff)
+
 
 
 log out:
 
 
-![image](https://github.com/user-attachments/assets/a63fd114-d38a-4e41-ae3b-aac25c714c40)
+![image](https://github.com/user-attachments/assets/2e7df256-e92a-416b-9096-20a2e1aa44ee) 
+
+
 
 
 
