@@ -55,6 +55,42 @@ signup page:
  ![image](https://github.com/user-attachments/assets/04af4977-7fdd-473d-b6d9-a604a79ad631)
 
  
+salads page:
+
+![image](https://github.com/user-attachments/assets/65833b75-3f68-4bed-8e15-40ed97abf824)
+
+![image](https://github.com/user-attachments/assets/01ed2b72-180d-4ec6-903a-077146c751a8)
+
+
+juices page:
+
+![image](https://github.com/user-attachments/assets/11cbdd35-a9c8-46ef-b040-723765fb2f53)
+
+about us:
+
+![image](https://github.com/user-attachments/assets/1849ad73-c538-4908-a2d9-bca55e506bc5)
+
+![image](https://github.com/user-attachments/assets/354b4b16-8e5a-4829-a19d-416fd6d07e7c)
+
+
+some search results:
+
+![image](https://github.com/user-attachments/assets/0a6c9c9a-76cf-43c7-ad84-5db39dbceee5)
+
+![image](https://github.com/user-attachments/assets/5a48b49e-b3b3-4a3c-85eb-fac2ad558b50)
+
+
+log out:
+
+
+![image](https://github.com/user-attachments/assets/a63fd114-d38a-4e41-ae3b-aac25c714c40)
+
+
+
+
+
+
+
 
 
 
