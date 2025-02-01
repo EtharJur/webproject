@@ -73,11 +73,13 @@ juices page:
 
 about us:
 
-![image](https://github.com/user-attachments/assets/3ddcfd51-08dd-4d71-8965-d6aeb0134f9e)
+![image](https://github.com/user-attachments/assets/8cf08adf-dd61-47ec-aa38-7c3deac75844)
 
 
 
-![image](https://github.com/user-attachments/assets/e2251638-2b79-4528-8ac2-ffdb2940c585)
+
+![image](https://github.com/user-attachments/assets/eabc2343-7af4-430b-9199-b0371da93f56)
+
 
 
 
