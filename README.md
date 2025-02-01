@@ -38,6 +38,73 @@ Future work:
 
 
 Screenshots:
+login page:
+
+
+![image](https://github.com/user-attachments/assets/ae14eb5d-f1d7-45d1-a1da-b603dcbe067b)
+
+
+signup page:
+
+
+![image](https://github.com/user-attachments/assets/96584883-e63f-43ae-8aec-469213406ac2) 
+
+
+
+ main page:
+
+![image](https://github.com/user-attachments/assets/ef4ea69e-93e1-4e09-9954-e950b509fb08)
+
+
+ 
+salads page:
+
+![image](https://github.com/user-attachments/assets/37b665c5-e9d2-414c-b2a1-cec051e170fb)
+
+
+![image](https://github.com/user-attachments/assets/2ebea322-1084-47c9-9373-5fa25b3e8c72)
+
+
+
+juices page:
+
+![image](https://github.com/user-attachments/assets/491768f2-ff21-42a6-bec7-43b767f50535)
+
+
+about us:
+
+![image](https://github.com/user-attachments/assets/d6393535-eb92-4cda-818b-3f948b8f99c3)
+
+
+![image](https://github.com/user-attachments/assets/5a596170-07ab-4f2b-adaf-9da459c92218)
+
+
+
+some search results:
+
+![image](https://github.com/user-attachments/assets/143acac0-49a5-4475-b5e4-8be6a85f3c7e)
+
+
+![image](https://github.com/user-attachments/assets/e1c60475-ca2d-4cc7-8535-448bb7cdb9ff)
+
+
+
+log out:
+
+
+![image](https://github.com/user-attachments/assets/2e7df256-e92a-416b-9096-20a2e1aa44ee) 
+
+
+
+
+
+
+
+
+
+
+
+
 
 Refrences:
 
