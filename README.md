@@ -47,19 +47,23 @@ login page:
 signup page:
 
 
- ![image](https://github.com/user-attachments/assets/94b4c0db-972f-4b9b-967e-2f8d58a9f248)
+![image](https://github.com/user-attachments/assets/96584883-e63f-43ae-8aec-469213406ac2) 
+
 
 
  main page:
 
- ![image](https://github.com/user-attachments/assets/04af4977-7fdd-473d-b6d9-a604a79ad631)
+![image](https://github.com/user-attachments/assets/ef4ea69e-93e1-4e09-9954-e950b509fb08)
+
 
  
 salads page:
 
-![image](https://github.com/user-attachments/assets/65833b75-3f68-4bed-8e15-40ed97abf824)
+![image](https://github.com/user-attachments/assets/37b665c5-e9d2-414c-b2a1-cec051e170fb)
 
-![image](https://github.com/user-attachments/assets/01ed2b72-180d-4ec6-903a-077146c751a8)
+
+![image](https://github.com/user-attachments/assets/2ebea322-1084-47c9-9373-5fa25b3e8c72)
+
 
 
 juices page:
